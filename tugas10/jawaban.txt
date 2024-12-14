@@ -1,0 +1,52 @@
+soal 1  : CREATE DATABASE myshop; 
+
+soal 2  : 
+
+CREATE TABLE `users` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) DEFAULT NULL,
+  `email` varchar(255) DEFAULT NULL,
+  `password` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`)
+)
+
+CREATE TABLE `categories` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`)
+)
+
+CREATE TABLE `items` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) NOT NULL,
+  `description` varchar(255) NOT NULL,
+  `price` int(11) NOT NULL,
+  `stock` int(11) NOT NULL,
+  `category_id` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `category_id` (`category_id`),
+  CONSTRAINT `items_ibfk_1` FOREIGN KEY (`category_id`) REFERENCES `categories` (`id`)
+)
+
+Soal 3  : 
+
+INSERT INTO users(name,email,password) VALUES("john doe","john@doe.com","john123"), ("jane doe","jane@doe.com","jenita123"); 
+
+INSERT INTO categories(name) VALUES("gadget"), ("cloth"), ("men"), ("women"), ("branded"); 
+
+INSERT INTO items(name,description,price,stock,category_id) VALUES("sumsang","hape keren dari merek sumsang",4000000,100,1), ("uniqloh","baju keren dari brand ternama",500000,50,2), ("IMHO watch","jam tangan anak yang jujur banget",2000000,10,1)
+
+Soal 4 :
+
+SELECT id,name,email from users
+
+SELECT * FROM `items` WHERE price > 1000000
+SELECT * FROM `items` WHERE name LIKE "%ng"
+
+SELECT items.*, categories.name FROM items INNER JOIN categories on items.category_id = categories.id
+
+Soal 5 :
+
+UPDATE items SET price = 2500000 WHERE name="sumsang"
+
+
