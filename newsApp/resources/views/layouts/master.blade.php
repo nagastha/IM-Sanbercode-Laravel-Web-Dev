@@ -75,7 +75,7 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
 
-            <li class="nav-item">
+          <li class="nav-item">
             <a href="/" class="nav-link">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
@@ -83,6 +83,22 @@
               </p>
             </a>
           </li>    
+          <li class="nav-item">
+            <a href="/genres" class="nav-link">
+              <i class="nav-icon"></i>
+              <p>
+                Genre
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="/films" class="nav-link">
+              <i class="nav-icon"></i>
+              <p>
+                Film
+              </p>
+            </a>
+          </li>
           <li class="nav-item">
             <a href="/table" class="nav-link">
               <i class="nav-icon fas fa-th"></i>

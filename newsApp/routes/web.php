@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\CastsController;
+use App\Http\Controllers\GenreController;
+use App\Http\Controllers\FilmController;
 
 
 Route::get('/', [DashboardController::class, "Index"]);
@@ -25,3 +27,14 @@ Route::post('/cast', [CastsController::class, 'store']);
 //route yang menampilkan database ke halaman brower
 
 Route::get('/cast', [CastsController::class, 'index']);
+
+//crud genrecontroller
+
+Route::resource('genres', GenreController::class);
+
+//crud film controller
+
+Route::resource('films', FilmController::class);
+
+Auth::routes();
+
